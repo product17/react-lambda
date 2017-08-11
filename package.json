@@ -1,0 +1,29 @@
+{
+  "name": "react-lambda",
+  "version": "0.0.0",
+  "description": "Lambda render of a react component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dist": "rm -rf ./lambda/dist && mkdir ./lambda/dist && cp -R ./lambda/node_modules/ ./lambda/dist/node_modules",
+    "build": "yarn dist  && ./node_modules/.bin/babel ./lambda/src --out-dir ./lambda/dist",
+    "zip": "yarn build && rm -f lambda.zip && cd lambda/dist && zip -r ../../lambda.zip *"
+  },
+  "author": "www-marketing <brent.crocker@concur.com> (https://www.concur.com)",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "dependencies": {
+    "eslint": "^4.4.1",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.2.0"
+  }
+}
